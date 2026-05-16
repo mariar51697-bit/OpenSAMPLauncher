@@ -1,24 +1,18 @@
-buildscript {
-    ext.kotlin_version = "1.8.22"
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
 
-    repositories {
-        google()
-        mavenCentral()
-    }
+android {
+    compileSdk 34
 
-    dependencies {
-        classpath "com.android.tools.build:gradle:8.1.4"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    defaultConfig {
+        applicationId "com.example.app"
+        minSdk 21
+        targetSdk 34
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+dependencies {
+    implementation 'com.android.volley:volley:1.2.1'
 }
